@@ -8,10 +8,10 @@ import ProductOne from "./component/productOne/ProductOne";
 import Sale from "./component/sale/Sale";
 import Subscrib from "./component/subscrib/Subscrib";
 import TopProduct from "./component/topProduct/TopProduct";
-import LastSlaider from "./component/lastSlaider/lastSlaider";
+import LastSlaider from "./component/lastSlaider/LastSlaider";
 import Footer from "./component/footer/Footer";
 import { Popup } from "./component/Popup";
-// import FashionProductsPage from "./component/FashionProductsPage";
+
 
 function App() {
   const [openPopup, setOpenPopup] = useState(false);
@@ -75,7 +75,6 @@ function App() {
       </div>
 
       <Footer />
-      {/* <FashionProductsPage /> */}
 
       {/* Conditionally render the Popup */}
       {openPopup && (

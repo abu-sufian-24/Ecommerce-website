@@ -5,7 +5,7 @@ export function Popup({ onClose }) {
   const [isOrderDone, setIsOrderDone] = useState(false);
 
   const handleOrder = (e) => {
-    e.preventDefault(); // Prevent form submission refresh
+    e.preventDefault(); 
     setIsOrderDone(true);
   };
 
