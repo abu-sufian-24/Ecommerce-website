@@ -1,24 +1,21 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      // Alias for slick-carousel or other packages if needed
       '~slick-carousel': 'slick-carousel',
+      // '@': path.resolve(__dirname, './src'), // Add this line for '@' alias
     },
   },
   server: {
-    // Optionally configure server settings
-    port: 3000, // Default port is 3000, you can change it here
+    port: 3000,
   },
   css: {
-    // Enable PostCSS or other CSS preprocessors if needed
     preprocessorOptions: {
       scss: {
-        // Additional configuration for SCSS (if needed)
         additionalData: `@import "src/styles/variables.scss";`,
       },
     },

@@ -8,7 +8,8 @@ import Img2 from "../../assets/women/women2.jpg";
 import Img3 from "../../assets/women/women3.jpg";
 import Img4 from "../../assets/women/women4.jpg";
 import { IoIosStar } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import FashionProductsPage from "../FashionProductsPage";
 
 
 // Product data array
@@ -21,6 +22,7 @@ const ProductsData = [
 ];
 
 function Product() {
+  const [showFashion, setShowFashion] = useState(false)
   // Initialize AOS
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
@@ -65,12 +67,13 @@ function Product() {
       {/* Centered View All Button */}
       <div className="text-center">
         <button
-          className="mt-10 cursor-pointer bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-500 transition-all duration-200"
+          onClick={() => setShowFashion(true)} className="mt-10 cursor-pointer bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-500 transition-all duration-200"
           data-aos="zoom-in"
         >
           View All Products
         </button>
       </div>
+      <FashionProductsPage onShowFashoin={setShowFashion} showFashion={showFashion} />
     </div>
   );
 }

@@ -29,7 +29,7 @@ const ImageList = [
   },
 ];
 
-function Banner() {
+function Banner({ onOrderClick }) {
   let settings = {
     dots: false,
     arrows: false,
@@ -71,7 +71,7 @@ function Banner() {
                     {data.description}
                   </p>
                   <div>
-                    <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-6 md:px-8 rounded-full">
+                    <button onClick={onOrderClick} className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-6 md:px-8 rounded-full">
                       Order Now
                     </button>
                   </div>
@@ -93,14 +93,15 @@ function Banner() {
           ))}
         </Slider>
 
-        {/* <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
+        <div className="fixed top-1/2 right-4 transform -translate-y-1/2 z-50">
           <button
-            onClick={() => alert("Ordering not available yet")}
-            className="bg-gradient-to-r from-primary to-secondary transition-all duration-300 text-white py-3 px-5 rounded-md  "
+            onClick={onOrderClick}
+            className="bg-gradient-to-r from-primary to-secondary transition-all duration-300 text-white py-3 px-6 rounded-md  "
           >
             <BsCart4 className="text-4xl text-white drop-shadow-sm cursor-pointer" />
+            <span className='bg-green-600 text-white  px-1 rounded-full absolute top-2 right-0  '>10</span>
           </button>
-        </div> */}
+        </div>
 
       </div>
     </div>

@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 import { BsCart4 } from "react-icons/bs";
 import DarkMode from "./DarkMode";
 
-function Navbar() {
+function Navbar({ onOrderClick }) {
   return (
     <div className="shadow-md bg-white overflow-x-hidden dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       <div className="bg-green-600/40 py-2">
@@ -30,7 +30,7 @@ function Navbar() {
             </div>
 
             {/* Order Button */}
-            <button onClick={() => alert("ordering not available yet")} className="bg-gradient-to-r from-primary to-secondary transition-all duration-300 text-white py-1 px-5 rounded-full items-center gap-3 group flex">
+            <button onClick={onOrderClick} className="bg-gradient-to-r from-primary to-secondary transition-all duration-300 text-white py-1 px-5 rounded-full items-center gap-3 group flex">
               <span className="group-hover:block hidden transition-all duration-300">
                 Order
               </span>

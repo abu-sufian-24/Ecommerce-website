@@ -31,14 +31,14 @@ const ProductsData = [
   },
 ];
 
-function TopProduct() {
+function TopProduct({ onOrderClick }) {
   useEffect(() => {
     AOS.init({ duration: 2000, easing: "ease-in-out" });
   }, [])
   return (
     <div className="mt-12 mb-12 px-4 sm:px-0 overflow-hidden">
       <div className="container mx-auto">
-        <div data className="text-center" data-aos="fade-up">
+        <div className="text-center" data-aos="fade-up">
           <p className="text-green-500 text-sm">Top Rated Products for You</p>
           <h2 className="text-3xl font-bold">Best Products</h2>
           <p className="text-md text-gray-400">
@@ -63,7 +63,7 @@ function TopProduct() {
                 {data.description}
               </p>
               <div className="flex justify-center pb-6">
-                <button className="bg-green-600 inline-block text-center duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary">
+                <button onClick={onOrderClick} className="bg-green-600 inline-block text-center duration-300 text-white py-1 px-4 rounded-full mt-4 group-hover:bg-white group-hover:text-primary">
                   Order Now
                 </button>
               </div>

@@ -6,7 +6,8 @@ import Img2 from "../../assets/women/women2.jpg";
 import Img3 from "../../assets/women/women3.jpg";
 import Img4 from "../../assets/women/women4.jpg";
 import { IoIosStar } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import FashionProductsPage from "../FashionProductsPage";
 
 const ProductsData = [
   {
@@ -52,6 +53,8 @@ const ProductsData = [
 ];
 
 function ProductOne() {
+
+  const [showFashion, setShowFashion] = useState(false)
   useEffect(() => {
     AOS.init({ duration: 1000, easing: "ease-in-out" });
   }, [])
@@ -88,12 +91,13 @@ function ProductOne() {
 
       {/* Centered View All Button */}
       <div data-aos="fade-up" className="text-center">
-        <button className="mt-10 cursor-pointer bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-500 transition-all duration-200">
+        <button onClick={() => setShowFashion(true)} className="mt-10 cursor-pointer bg-green-600 text-white py-2 px-6 rounded-md hover:bg-green-500 transition-all duration-200">
           View All Products
         </button>
       </div>
+      <FashionProductsPage onShowFashoin={setShowFashion} showFashion={showFashion} />
     </div>
   );
 }
 
-export default ProductOne;
+export default ProductOne; 

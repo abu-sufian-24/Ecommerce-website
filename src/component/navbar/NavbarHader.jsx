@@ -1,29 +1,27 @@
-
 import { Dropdown } from "flowbite-react";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 
-function NavbarHeader() {
+function NavbarHeader({ onTopRatedClick, onBannerClick, onProductClick, onTopProduct, onSlaider }) {
   const [MobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <div className="pt-4 pb-3 overflow-x-hidden bg-white shadow-sm dark:bg-gray-900 dark:text-white">
-      {/* Desktop Menu */}
       <ul className="hidden md:flex justify-center flex-wrap">
         <li className="pr-6 lg:pr-12 hover:text-primary text-lg">
-          <a href="#">Home</a>
+          <a onClick={onBannerClick} href="#">Home</a>
         </li>
         <li className="pr-6 lg:pr-12 hover:text-primary text-lg">
-          <a href="#">Top Rated</a>
+          <a href="#" onClick={onTopRatedClick}>Top Rated</a>
         </li>
         <li className="pr-6 lg:pr-12 hover:text-primary text-lg">
-          <a href="#">Kids Wear</a>
+          <a onClick={onProductClick} href="#">Women's Clothes</a>
         </li>
         <li className="pr-6 lg:pr-12 hover:text-primary text-lg">
-          <a href="#">Mens Wear</a>
+          <a onClick={onTopProduct} href="#">Mens Clothes</a>
         </li>
         <li className="pr-6 lg:pr-12 hover:text-primary text-lg">
-          <a href="#">Electronics</a>
+          <a onClick={onSlaider} href="#">Electronics</a>
         </li>
         <Dropdown
           className="pr-6 lg:pr-12 text-lg"
@@ -53,7 +51,7 @@ function NavbarHeader() {
             <a href="#">Home</a>
           </li>
           <li className="text-lg hover:text-primary">
-            <a href="#">Top Rated</a>
+            <a href="#" onClick={onTopRatedClick}>Top Rated</a>
           </li>
           <li className="text-lg hover:text-primary">
             <a href="#">Kids Wear</a>
